@@ -1,5 +1,13 @@
 # Proxmox NFP (NOT FOR PRODUCTION)
 
+Automate an  enviroment for Proxmox for home or development use.
+
+Typically Proxmox eviroment requires multiple machines: Proxmox server, user console, and network mangement systems. Proxmox typically sets up its networking to bridge local lan and it is expected that you run a firewall/dns/router in front of Proxmox, then use a desktop to interact with the Proxmox server.  
+
+The purpose of this is to encorporate everthing into a single machine. We remove the bridge to the local lan, install OpenWRT to manage the network, and set Proxmox to bridge the internal OpenWRT NAT network. Then we install a GUI desktop on the machine so you can browse to the local Proxmox and OpenWRT management consoles. To create an empirical environment when testing cloud systems and services locally.
+
+`TODO:` we will add VPN/Wireguard access and cloudflared tunneling to our inside network.
+
 > **Warning**  This is not for Enterprise Environments
 >
 > **Warning**  This is not supported by Proxmox or affiliated in anyway!
@@ -10,19 +18,15 @@
 
 ## Information
 
-> **Note** Proxmox by design is meant to be a server, therefore it has a minimal OS.
+> **Note** Proxmox by design is meant to be a server, therefore it has a minimal O.
 >
-> **Note** The purpose of this is create a home server and provide additional functionality.
->
-> **Note** Proxmox typically bridges to the local lan, this puts everything behind OpenWrt.
->
-> **Note** Typically Proxmox takes 2 machines, this is full GUI from a single console.
+> **Note** This is to provide home or development use with additional functionality
 
 ## Quick Instructions
 
-> On your functioning machine create the installer media
+> On a functioning machine create the installer media
 > 
-> Ensure IOMMU supported https://pve.proxmox.com/wiki/Pci_passthrough#Enable_the_IOMMU
+> Ensure IOMMU supported `https://pve.proxmox.com/wiki/Pci_passthrough#Enable_the_IOMMU`
 > 
 > Reinstall the machine with Proxmox, following the guide
 > 
@@ -41,10 +45,10 @@
 
 ### Preinstall
 1. Create Ventoy USB Key following their instructions
-   * https://www.ventoy.net/en/doc_start.html
+   * `https://www.ventoy.net/en/doc_start.html`
 3. Copy Proxmox ISO to USB key
 4. git clone this repo to the root of the USB key
-5. Copy openwrt...gz to the root of the USB key
+5. Copy `openwrt...gz` to the root of the USB key
 
 ## Instructions
 
