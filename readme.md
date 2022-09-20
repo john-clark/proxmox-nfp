@@ -18,9 +18,13 @@ The purpose of this is to encorporate everthing into a single machine. We remove
 
 ## Information
 
-> **Note** Proxmox by design is meant to be a server, therefore it has a minimal O.
+> **Note** Proxmox by design is meant to be a server, therefore it has a minimal Operating System
 >
-> **Note** This is to provide home or development use with additional functionality
+> **Note** Proxmox was **not** designed for this functionality, again do not ask them for support.
+>
+> **Note** As an paid or unpaid user of Proxmox you are subject to their changes, this may not work.
+>
+> **Note** This combines the work from **many** different people and can change at anytime.
 
 ## Quick Instructions
 
@@ -87,3 +91,10 @@ The purpose of this is to encorporate everthing into a single machine. We remove
   * AdGuard - point OpenWRT here
 
 `TODO:` Reverse Proxy overlay/menu
+
+# THANKS
+ * Debian team
+ * Proxmox team
+ * OpenWRT team
+ * Docker team
+ * all the people that have share their code - **Open Source FTW**
