@@ -93,8 +93,9 @@ The purpose of this is to encorporate everthing into a single machine. We remove
 `TODO:` Reverse Proxy overlay/menu
 
 # THANKS
- * Debian team
- * Proxmox team
- * OpenWRT team
- * Docker team
- * all the people that have share their code - **Open Source FTW**
+ * Debian team - https://wiki.debian.org/Teams
+ * Proxmox team - https://proxmox.com/about
+ * OpenWRT team - https://openwrt.org/infrastructure
+ * Docker team - https://docker.com/company/
+ * Ventoy team - https://ventoy.net/en/donation.html
+ * All the people that have shared their code - **Open Source FTW**
