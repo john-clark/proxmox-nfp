@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+#  https://openwrt.org/docs/guide-user/virtualization/qemu
+
 #this will always be first
 VMID=100
 

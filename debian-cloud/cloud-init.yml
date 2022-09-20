@@ -1,0 +1,21 @@
+#cloud-config
+chpasswd:
+  expire: False
+users:
+  - name:: user
+    password: password
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+package_upgrade: true
+package_reboot_if_required: true
+locale: en_US.UTF-8
+timezone: America/Chicago
+runcmd:
+  - sed -i 's/[#]*Port 22/Port 9726/g' /etc/ssh/sshd_config
+  - sed -i 's/[#]*PermitRootLogin yes/PermitRootLogin prohibit-password/g' /etc/ssh/sshd_config
+  - sed -i 's/[#]*PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
+  - sed -i 's/#HostKey \/etc\/ssh\/ssh_host_ed25519_key/HostKey \/etc\/ssh\/ssh_host_ed25519_key/g' /etc/ssh/sshd_config
+  - systemctl reload ssh
+packages:
+  - qemu-guest-agent
