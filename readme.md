@@ -1,10 +1,10 @@
 # Proxmox NFP (NOT FOR PRODUCTION)
 
-Automate an  enviroment for Proxmox for home or development use.
+Automate an environmant for Proxmox for home or development use.
 
-Typically Proxmox eviroment requires multiple machines: Proxmox server, user console, and network mangement systems. Proxmox typically sets up its networking to bridge local lan and it is expected that you run a firewall/dns/router in front of Proxmox, then use a desktop to interact with the Proxmox server.  
+Typically, Proxmox evironment requires multiple machines: Proxmox server, user console, and network management. Proxmox typically bridges its network management interface to the local lan, it is expected that you run a firewall/dns/router in front of Proxmox, then use a desktop to interact with the Proxmox server.  
 
-The purpose of this is to encorporate everthing into a single machine. We remove the bridge to the local lan, install OpenWRT to manage the network, and set Proxmox to bridge the internal OpenWRT NAT network. Then we install a GUI desktop on the machine so you can browse to the local Proxmox and OpenWRT management consoles. To create an empirical environment when testing cloud systems and services locally.
+The purpose of this is to incorporate everything into a single machine. We remove the bridge to the local lan, install OpenWRT to manage the network, and set Proxmox to bridge the internal OpenWRT NAT network. Then we install a GUI desktop on the machine so you can browse to the local Proxmox and OpenWRT management consoles. To create an empirical environment when testing cloud systems and services locally.
 
 `TODO:` we will add VPN/Wireguard access and cloudflared tunneling to our inside network.
 
