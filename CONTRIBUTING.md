@@ -1,0 +1,1 @@
+To contribute documentation or code, please send us a pull request. If you are new to pull requests, read GitHub's [Creating a pull request from a fork guide](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
