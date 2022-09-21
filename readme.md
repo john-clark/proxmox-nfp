@@ -18,13 +18,11 @@ The purpose of this is to incorporate everything into a single machine. We remov
 
 ## Information
 
-> **Note** Proxmox by design is meant to be a server, therefore it has a minimal Operating System
+> **Note** Proxmox by design is meant to be a server, therefore it has a minimal Operating System. This is the opposite of their design. Since Proxmox was **not** designed for this functionality, do not ask them for support.
 >
-> **Note** Proxmox was **not** designed for this functionality, again do not ask them for support.
+> **Note** As an paid or unpaid user of Proxmox you are subject to their changes, and therefor this may not function as designed. This project combines the work from **many** different people and which is also subject to change at anytime. Onkly an attempt was made to make this version independent.
 >
-> **Note** As an paid or unpaid user of Proxmox you are subject to their changes, this may not work.
->
-> **Note** This combines the work from **many** different people and can change at anytime.
+> **Note** This project is still a work in progress and therefore it is not complete.
 
 ## Quick Instructions
 
