@@ -1,16 +1,7 @@
 #!/bin/bash
 
 #configure apt - https://pve.proxmox.com/wiki/Package_Repositories
-
-#add repo -clobber
-echo deb http://download.proxmox.com/debian/pve bullseye pve-no-subscription > /etc/apt/sources.list.d/pve-no-sub.list
-
-#disable repo
-  sed -i 's/^deb/#deb/' /etc/apt/sources.list.d/pve-enterprise.list
-
-# update/upgrade
-pveupdate
-pveupgrade
+source fixaptsources.sh
 
 #install gui
 apt install --no-install-recommends git vim xorg openbox lightdm freerdp2-shadow-x11 chromium pulseaudio
