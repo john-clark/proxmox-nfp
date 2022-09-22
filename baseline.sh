@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #configure apt - https://pve.proxmox.com/wiki/Package_Repositories
-source fixaptsources.sh
+source ~/proxmox-nfp/fixaptsources.sh
 
 #install gui
 apt install --no-install-recommends git vim xorg openbox lightdm freerdp2-shadow-x11 chromium pulseaudio
