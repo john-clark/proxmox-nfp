@@ -2,7 +2,7 @@
 
 Automate Proxmox for home or development use.
 
-Typically, Proxmox evironment requires multiple machines: Proxmox server, user console, and network management. Proxmox typically bridges its network management interface to the local lan, it is expected that you run a firewall/dns/router in front of Proxmox, then use a desktop to interact with the Proxmox server.  
+Typically, Proxmox environment requires multiple machines: Proxmox server, user console, and network management. Proxmox typically bridges its network management interface to the local lan, it is expected that you run a firewall/dns/router in front of Proxmox, then use a desktop to interact with the Proxmox server.  
 
 The purpose of this is to incorporate everything into a single machine. We remove the bridge to the local lan, install OpenWRT to manage the network, and set Proxmox to bridge the internal OpenWRT NAT network. Then we install a GUI desktop on the machine so you can browse to the local Proxmox and OpenWRT management consoles. To create an empirical environment when testing cloud systems and services locally.
 
@@ -18,7 +18,7 @@ The purpose of this is to incorporate everything into a single machine. We remov
 
 ## Information
 
-> **Note** Proxmox by design is meant to be a server, therefore it has a minimal Operating System. This is the opposite of their design. Since Proxmox was **not** designed for this functionality, do not ask them for support.
+> **Note** Proxmox is meant to be a server so it only has a minimal Operating System. This project is the opposite of their design. Since Proxmox was **not** designed for this functionality, do not ask them for support.
 >
 > **Note** As an paid or unpaid user of Proxmox you are subject to their changes, and therefor this may not function as designed. This project combines the work from **many** different people and which is also subject to change at anytime. Onkly an attempt was made to make this version independent.
 >
