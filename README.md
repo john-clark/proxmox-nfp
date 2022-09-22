@@ -54,6 +54,8 @@ The purpose of this is to incorporate everything into a single machine. We remov
 3. Download openwrt to the proxmox-nfp folder
    * https://downloads.openwrt.org/releases/22.03.0/targets/x86/64/
 
+# Installation Detailed Instructions
+
 ### Preinstall
 1. Create Ventoy USB Key following their instructions
    * `https://www.ventoy.net/en/doc_start.html`
@@ -61,7 +63,7 @@ The purpose of this is to incorporate everything into a single machine. We remov
 4. git clone this repo, or download the zip and extract to the USB key
 5. Copy `openwrt...gz` to the root of the USB key
 
-## Installation Detailed Instructions
+### System Installation
 
 `unplug network cable` To avoid DHCP
 
