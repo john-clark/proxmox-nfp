@@ -1,6 +1,6 @@
 # Proxmox NFP (NOT FOR PRODUCTION)
 
-Automate an environmant for Proxmox for home or development use.
+Automate Proxmox for home or development use.
 
 Typically, Proxmox evironment requires multiple machines: Proxmox server, user console, and network management. Proxmox typically bridges its network management interface to the local lan, it is expected that you run a firewall/dns/router in front of Proxmox, then use a desktop to interact with the Proxmox server.  
 
@@ -26,19 +26,28 @@ The purpose of this is to incorporate everything into a single machine. We remov
 
 ## Quick Instructions
 
-> On a functioning machine create the installer media
+> On a functioning machine create the installer media and copy this repo to the USB key
 > 
-> Ensure IOMMU supported `https://pve.proxmox.com/wiki/Pci_passthrough#Enable_the_IOMMU`
+> Ensure VTx enabled in BIOS `https://pve.proxmox.com/wiki/Pci_passthrough#Enable_the_IOMMU`
 > 
-> Reinstall the machine with Proxmox, following the guide
+> Install the machine with Proxmox USB key, following the specifics in this guide
 > 
-> Run the setup scripts
+> Run the setup scripts in this repo from the usb key following the instructions
 > 
-> When you reboot into KIOSK mode press CTRL-N and browse to 192.168.1.1 for OpenWRT
+> The final reboot will be into KIOSK mode. Press CTRL-N in browser, 192.168.1.1 for OpenWRT
+
+### Requirements
+
+- CPU: 64bit (Intel EMT64 or AMD64)
+- Intel VT/AMD-V capable CPU/Mainboard (for KVM Full Virtualization support)
+- Minimum 8GB RAM ( Recommanded 16 or more)
+- Hard Drive 256GB ( Recommended 512GB or more)
+- One Hardware NIC ( Recommended 2nd NIC for LAN and Wifi if you want OpenWRT to be an AP)
+- USB key for installation
 
 ### Prereq:
 
-1. Download and install Ventoy
+1. Download and install Ventoy on the USB key
    * https://github.com/ventoy/Ventoy/releases
 2. Download and copy Proxmox iso to the Ventoy data folder
    * https://www.proxmox.com/en/downloads/category/iso-images-pve
@@ -49,14 +58,14 @@ The purpose of this is to incorporate everything into a single machine. We remov
 1. Create Ventoy USB Key following their instructions
    * `https://www.ventoy.net/en/doc_start.html`
 3. Copy Proxmox ISO to USB key
-4. git clone this repo to the root of the USB key
+4. git clone this repo, or download the zip and extract to the USB key
 5. Copy `openwrt...gz` to the root of the USB key
 
-## Instructions
+## Installation Detailed Instructions
 
-`unplug net`
+`unplug network cable` To avoid DHCP
 
-`Boot computer`
+`Boot computer` from USB key
 
 1. Install proxmox - choose defaults except for network
    * hostname: `pve.lan`
@@ -69,14 +78,21 @@ The purpose of this is to incorporate everything into a single machine. We remov
    * `mount /dev/sda1 /mnt`
    * `/mnt/proxmox-nfp/runme1st.sh` 
 
-`plug in network`
+`plug in network cable`
 
-`Boot computer`
+`Boot computer` 
 
 3. Run setup
-   * `proxmox-nfp/baseline.sh`
+   * log in as root
+   * run `proxmox-nfp/baseline.sh`
+   * After reboot you will be brought to a GUI Proxmox Login
+
+     > **Warning**  If DHCP is not available on the outside proxmox network, you will need to setup OpenWRT with a static ip. Press `CTRL-N` and browse to `192.168.1.1` to configure your outside connection.
 
 4. Install Docker
+   * log in as root in the Proxmox Gui
+   * Browse to Console
+   * Wait until you can ping the outside and you know OpenWRT has an ip address.
    * `proxmox-nfp/create-debian-docker-ct.sh`
 
 ## Not quite there yet
