@@ -1,0 +1,12 @@
+services:
+  cloudflared:
+    container_name: cloudflared
+    hostname: cloudflared
+    image: cloudflare/cloudflared:latest
+    network_mode: host
+    volumes:
+      - /docker/cloudflared/etc/:/etc/cloudflared/
+    command: 'tunnel run'
+    environment:
+      - TUNNEL_TOKEN=someverylongtokenhere
+    restart: unless-stopped
